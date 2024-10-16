@@ -24,7 +24,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    List<User> usuarios = new ArrayList<>();
+    public List<User> usuarios = new ArrayList<>();
     Response response = new Response();
 
     public UserController () {
