@@ -47,4 +47,17 @@ class DemoApplicationTests {
         userList.add(user2);
     }
 
+    @Test
+    public void testGetUsersSortedByEmail() throws Exception {
+        // Simulamos que el servicio devuelve la lista de usuarios
+        when(userService.getAllUsers()).thenReturn(userList);
+
+        mockMvc.perform(get("/users")
+                        .param("sortedBy", "email"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.code").value(0))
+                .andExpect(jsonPath("$.message").value("All Users Sorted by email"))
+                .andExpect(jsonPath("$.users_info[0].email").value("user1@mail.com"))
+                .andExpect(jsonPath("$.users_info[1].email").value("user2@mail.com"));
+    }
 }
