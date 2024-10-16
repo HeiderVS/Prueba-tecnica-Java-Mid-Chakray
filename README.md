@@ -207,6 +207,15 @@ Usa una herramienta como Postman o cURL para interactuar con los endpoints.
 
 O utiliza Swagger UI que se genera automaticamente en el proyecto: `http://localhost:8080/doc/swagger-ui/index.html#/user-controller/sortedBy`
 
+### Ejecutar como una Imagen de Docker
+
+1. Ve hacia la carpeta raiz del proyecto.
+2. Ejecta la linea `docker build -t prueba-tecnica-heidervs-image .` para construir la imagen de docker.
+3. Ejecuta la linea `docker run -p 8080:8080 prueba-tecnica-heidervs` para construir el contenedor de docker 
+4. Puedes consumir los endpoints en la URL: http://localhost:8080/users
+
+
+
 Notas
 Todas las respuestas tienen un formato JSON que incluye un campo code, un message descriptivo y un campo users_info con los datos relevantes.
 Asegúrate de incluir los encabezados de Content-Type: application/json en las solicitudes que requieran un cuerpo JSON.
